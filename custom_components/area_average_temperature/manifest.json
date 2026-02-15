@@ -1,0 +1,12 @@
+{
+  "domain": "area_average_temperature",
+  "name": "Area Average Temperature",
+  "codeowners": [
+    "@guyk"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/guyk/area-average-temperature-custom-component",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/guyk/area-average-temperature-custom-component/issues",
+  "version": "0.1.0"
+}
