@@ -1,0 +1,83 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Set up area average temperature sensors.",
+        "title": "Area Average Temperature Setup"
+      },
+      "select": {
+        "description": "Select which areas and sensors to include. You can also add custom areas after setup.",
+        "title": "Select Areas and Sensors"
+      },
+      "manual_select": {
+        "description": "No temperature sensors were found in your Home Assistant areas. Create a custom area and select sensors manually.",
+        "title": "Create Custom Area"
+      }
+    },
+    "abort": {
+      "already_configured": "This entry is already configured.",
+      "no_sensors": "No temperature sensors found. Please add temperature sensors first."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Manage areas and their temperature sensors.",
+        "title": "Area Configuration",
+        "menu_options": {
+          "add_area": "Add new area",
+          "edit_area": "Edit existing area",
+          "remove_area": "Remove area"
+        }
+      },
+      "add_area": {
+        "description": "Enter a name for the new area.",
+        "title": "Add New Area",
+        "data": {
+          "area_name": "Area name"
+        }
+      },
+      "add_area_sensors": {
+        "description": "Select temperature sensors for {area_name}.",
+        "title": "Select Sensors",
+        "data": {
+          "sensors": "Temperature sensors"
+        }
+      },
+      "edit_area": {
+        "description": "Select an area to configure.",
+        "title": "Select Area",
+        "data": {
+          "area_key": "Area"
+        }
+      },
+      "edit_area_sensors": {
+        "description": "Select temperature sensors for {area_name}.",
+        "title": "Select Sensors",
+        "data": {
+          "sensors": "Temperature sensors"
+        }
+      },
+      "remove_area": {
+        "description": "Select an area to remove. This will delete the sensor but can be undone by re-adding the area.",
+        "title": "Remove Area",
+        "data": {
+          "area_key": "Area to remove"
+        }
+      }
+    },
+    "error": {
+      "area_exists": "An area with this name already exists.",
+      "invalid_name": "Invalid area name. Use only letters, numbers, spaces, and hyphens.",
+      "no_sensors_selected": "Please select at least one sensor.",
+      "no_areas_configured": "No areas are configured yet. Please add an area first."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "area_average_temperature": {
+        "name": "{area_name} Average Temperature"
+      }
+    }
+  }
+}
