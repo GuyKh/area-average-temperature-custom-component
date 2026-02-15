@@ -13,7 +13,21 @@ ignore = [
     "D212", # multi-line-summary-first-line (incompatible with formatter)
     "COM812", # incompatible with formatter
     "ISC001", # incompatible with formatter
+    # Allow unused arguments in callbacks
+    "ARG001", "ARG002",
+    # Allow long lines for docstrings and URLs
+    "E501",
+    # Allow unused arguments in init methods
+    "PLR0913",
+    # Allow missing type annotations for these common patterns
+    "ANN001", "ANN201", "ANN205",
 ]
+
+[lint.per-file-ignores]
+# Allow print statements in scripts
+"scripts/*" = ["T20"]
+# Allow relative imports in components
+"custom_components/**/*" = ["TID252"]
 
 [lint.flake8-pytest-style]
 fixture-parentheses = false
