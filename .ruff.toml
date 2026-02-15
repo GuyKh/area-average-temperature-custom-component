@@ -21,6 +21,8 @@ ignore = [
     "PLR0913",
     # Allow missing type annotations for these common patterns
     "ANN001", "ANN201", "ANN205",
+    # Allow implicit namespace packages (for custom components)
+    "INP001",
 ]
 
 [lint.per-file-ignores]
