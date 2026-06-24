@@ -1,0 +1,30 @@
+name: "Semantic Commit Message Validation"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions: {}
+
+jobs:
+  validate:
+    name: "Validate commit messages"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Validate current commit (last commit) with commitlint
+        uses: wagoid/commitlint-github-action@v6
+        with:
+          commitDepth: 1
+          configFile: .commitlintrc.json
+
+      - name: Validate all commits in PR with commitlint
+        if: github.event_name == 'pull_request'
+        uses: wagoid/commitlint-github-action@v6
+        with:
+          commitDepth: ${{ github.event.pull_request.commits }}
+          configFile: .commitlintrc.json
